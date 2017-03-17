@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.dandelion:dandelion-core:1.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dandelion/dandelion-core/1.1.0/c45c6898016ecd9a29c985cf3e5beb4dcdb8692f/dandelion-core-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dandelion/dandelion-core/1.1.0/b94c1515a97ec66e7288d225cf5a8c7d2e086354/dandelion-core-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

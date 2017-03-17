@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.dandelion:datatables-core:1.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dandelion/datatables-core/1.1.0/509b39637a8a6fe3e5c109905d434eaf805d2112/datatables-core-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dandelion/datatables-core/1.1.0/c070b904ef3efd63a115a806863dc11b1b442835/datatables-core-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.dandelion:dandelion-thymeleaf:1.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dandelion/dandelion-thymeleaf/1.1.0/33944c59a8fd8d969384e1972e6344ac127ae9c6/dandelion-thymeleaf-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.dandelion/dandelion-thymeleaf/1.1.0/7aac7df7111b2e4779f306996b586ee5271d36db/dandelion-thymeleaf-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

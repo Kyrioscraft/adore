@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.social:spring-social-security:1.1.4.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.social/spring-social-security/1.1.4.RELEASE/b6c713ee977be55cdbf20e20356aa0dab2271035/spring-social-security-1.1.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.social/spring-social-security/1.1.4.RELEASE/9a8a2a636fca851833105d49ed79fe8862559ea/spring-social-security-1.1.4.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

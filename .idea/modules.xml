@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adore.iml" filepath="$PROJECT_DIR$/.idea/modules/adore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adore_main.iml" filepath="$PROJECT_DIR$/.idea/modules/adore_main.iml" group="adore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adore_test.iml" filepath="$PROJECT_DIR$/.idea/modules/adore_test.iml" group="adore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-model/data-model.iml" filepath="$PROJECT_DIR$/.idea/modules/data-model/data-model.iml" group="data-model" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-model/data-model_main.iml" filepath="$PROJECT_DIR$/.idea/modules/data-model/data-model_main.iml" group="data-model" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-model/data-model_test.iml" filepath="$PROJECT_DIR$/.idea/modules/data-model/data-model_test.iml" group="data-model" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restful-server/restful-server.iml" filepath="$PROJECT_DIR$/.idea/modules/restful-server/restful-server.iml" group="restful-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restful-server/restful-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/restful-server/restful-server_main.iml" group="restful-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/restful-server/restful-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/restful-server/restful-server_test.iml" group="restful-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-server/web-server.iml" filepath="$PROJECT_DIR$/.idea/modules/web-server/web-server.iml" group="web-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-server/web-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web-server/web-server_main.iml" group="web-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-server/web-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web-server/web-server_test.iml" group="web-server" />
+    </modules>
+  </component>
+</project>

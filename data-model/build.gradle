@@ -1,0 +1,57 @@
+jar {
+    manifest{
+        attributes 'Main-Class':'cn.kyrioscraft.data.JpaLauncher'
+    }
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['src/main/java','src/main/resources']
+        resources.srcDir('src/main/resources')
+    }
+    test {
+        java.srcDir('src/test/java')
+    }
+}
+
+configurations {
+    compile.exclude module:'org.slf4j'
+}
+
+springBoot {
+    mainClass = 'cn.kyrioscraft.data.JpaLauncher'
+}
+ext {
+    springSocialVersion = '1.1.4.RELEASE'
+    jacksonVersion = '2.8.1'
+}
+dependencies {
+    compile 'com.github.slugify:slugify:2.1.5'
+    compile ("org.springframework.social:spring-social-core:${springSocialVersion}")
+    compile ("org.springframework.social:spring-social-web:${springSocialVersion}")
+    compile ("org.springframework.social:spring-social-config:${springSocialVersion}")
+    compile ("org.springframework.social:spring-social-security:${springSocialVersion}")
+    compile ("org.codehaus.jackson:jackson-mapper-asl:1.9.13")
+}
+
+task serviceTests(type: Test, dependsOn: testClasses) {
+    include '**/*Service'
+}
+
+task showHome << {
+    println "${rootDir}"
+}
+
+task production << {
+    bootRun.systemProperty 'spring.profiles.active', 'mysql'
+}
+
+bootRun {
+    addResources = false
+    systemProperty 'spring.profiles.active', 'mysql'
+    main = 'cn.kyrioscraft.data.JpaLauncher'
+}
+
+task linkjBuild(type: Exec) {
+    commandLine "bash", "${rootDir}/install/sh/linkjBuild.sh", "--rm"
+}

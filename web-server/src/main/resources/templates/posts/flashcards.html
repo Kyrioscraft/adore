@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--suppress JSUnusedLocalSymbols -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--/*@thymesVar id="currentCategory" type="com.nixmash.springdata.jpa.model.addons.FlashcardCategory"*/-->
+    <div th:include="fragments/head :: head" th:remove="tag">Global Header</div>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/highlight/github.css}"/>
+    <script th:src="@{/js/highlight.pack.js}"></script>
+    <title th:utext="#{flashcards.page.title(${currentCategory.category})}">[Flashcards Demo]</title>
+</head>
+<body>
+<nav th:replace="fragments/navbar :: navbar('demos')">Navbar</nav>
+
+<!--/*@thymesVar id="categories" type="List<com.nixmash.springdata.jpa.model.addons.FlashcardCategory>"*/-->
+<!--/*@thymesVar id="currentCategory" type="com.nixmash.springdata.jpa.model.addons.FlashcardCategory"*/-->
+
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1 th:text="#{flashcards.page.header}">[flashcards]</h1>
+                <p class="lead" th:text="#{flashcards.page.subheader(${currentCategory.category})}">[Flashcards for Category...]</p>
+                <div class="flashcard-categories-select">
+                    <div class="form-actions special-select">
+
+
+                        <form th:object="${category}" method="post" th:action="@{/posts/flashcards}"
+                              class="form-horizontal" id="flashcard-categories-select">
+                            <select th:value="${categoryId}" name="categoryId" id="categoryId" class="selectpicker"
+                                    data-style="btn-primary">
+                                <option th:each="category : ${categories}" th:text="${category.category}"
+                                        th:value="${category.categoryId}" th:selected="${category.categoryId == currentCategory.categoryId}"></option>
+                            </select>
+                            <button type="submit" class="btn btn-success btn-flashcard-category" name="link" value="true">Select
+                            </button>
+                            <button id="show-answer-button" type="button"
+                                    class="btn btn-success btn-flashcards" onclick="showAnswer()">
+                                <span class="glyphicon glyphicon-sunglasses"></span>
+                                <span>Show Answer!</span>
+                            </button>
+
+                            <button id="show-flashcards-button" type="button"
+                                    class="btn btn-success btn-flashcards" onclick="showFlashcards()">
+                                <span>Return to Flashcards</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div th:replace="fragments/sponsor :: [id='sponsor']">Sponsor Image</div>
+        </div>
+    </div>
+</div>
+
+<!--/*@thymesVar id="flashcards" type="List<com.nixmash.springdata.jpa.model.addons.Flashcard>"*/-->
+<!--/*@thymesVar id="flashcard" type="com.nixmash.springdata.jpa.model.addons.Flashcard"*/-->
+
+<div class="container bs-container">
+    <div class="row">
+        <div class="bs-section">
+
+
+            <div id="answer"></div>
+
+            <div class="flashcard-images" data-example-id="simple-carousel">
+                <div id="flashcard-carousel" class="carousel slide"
+                     data-ride="carousel">
+
+                    <!-- Indicators -->
+                    <div class="carousel-inner" role="listbox">
+                        <div th:each="flashcard, row : ${flashcards}" class="item"
+                             th:classappend="${row.index == 0 }? 'active'">
+                            <img th:src="${flashcard.imageUrl}" src=""/>
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li th:each="flashcard, row : ${flashcards}"
+                            data-target="#flashcard-carousel" th:attr="data-slide-to=${row.index}"
+                            th:class="${row.index == 0 }? 'active'"></li>
+                    </ol>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#flashcard-carousel" role="button"
+                       data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#flashcard-carousel" role="button"
+                       data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="fragments/secinfo :: [id='secInfo']">User Info</nav>
+</div>
+
+<div th:include="fragments/scripts :: [id='scripts']" th:remove="tag">Scripts</div>
+<div th:include="fragments/alerts :: [id='alerts']" th:remove="tag">Alerts</div>
+
+<input type="hidden" id="imageIndex" name="imageIndex" value="0"/>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    $("#show-flashcards-button").hide();
+
+    var flashcardCarousel = '#flashcard-carousel';
+    var answer = '#answer';
+
+    $('.carousel').carousel({
+        interval: false
+    });
+
+    function showAnswer() {
+
+        var index = $('#imageIndex').val();
+
+        $.get('/posts/flashcards/answer/' + index, function (data) {
+            $("#flashcard-carousel").hide();
+            $("#show-flashcards-button").show();
+            $("#show-answer-button").hide();
+            $(answer).show();
+            $(answer).html(data);
+        });
+    }
+
+    function showFlashcards() {
+        $("#flashcard-carousel").show();
+        $("#show-flashcards-button").hide();
+        $("#show-answer-button").show();
+        $("#answer").hide();
+    }
+
+    $(flashcardCarousel).on('slide.bs.carousel', function (e) {
+        var slideFrom = $(this).find('.active').index();
+        var slideTo = $(e.relatedTarget).index();
+        console.log(slideFrom + ' => ' + slideTo);
+        $('#imageIndex').val(slideTo);
+    });
+
+    /*]]>*/
+</script>
+
+</body>
+</html>
+
+
+

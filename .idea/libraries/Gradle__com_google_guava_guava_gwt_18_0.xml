@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.guava:guava-gwt:18.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-gwt/18.0/4ed3be97a1f2a31c4b0ed91a5ac6de83248db9e8/guava-gwt-18.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-gwt/18.0/ed746e17631e0957ef400998c55fe9918f8079dd/guava-gwt-18.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
